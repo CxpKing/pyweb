@@ -7,6 +7,11 @@ def gitCmd(cmd):
 	log = f.read()
 	f.close()
 	print(log)
-update = ["git reset --hard && git clean -f"]
+update = ["git clean -f",
+		  "git checkout master",
+		  "git reset --hard",
+		  "git fetch --all",
+		  "git reset --hard origin/master",
+		  "git pull"]
 for cmd in update:
 	gitCmd(cmd)
