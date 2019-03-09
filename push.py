@@ -12,4 +12,9 @@ push = ["git add -A",
 		  "git push origin master",
 		]
 for cmd in push:
+	if cmd == "git commit -m":
+		ann = input("Please enter commrnts for this commit:\n")
+		comand = cmd+" "+"\""+ann+"\""
+		gitCmd(comand)
+		continue
 	gitCmd(cmd)
